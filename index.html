@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>For My Love ❤️</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body{
+    margin:0;
+    font-family: 'Segoe UI', sans-serif;
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    overflow:hidden;
+    background:#000;
+}
+
+/* Romantic background image */
+.bg{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:url('bg-love.jpg') center/cover no-repeat;
+    filter: blur(8px) brightness(0.8);
+    z-index:-2;
+}
+
+/* Floating hearts */
+.heart{
+    position:fixed;
+    color:rgba(255,255,255,0.7);
+    font-size:20px;
+    animation: float 8s linear infinite;
+    z-index:-1;
+}
+
+@keyframes float{
+    0%{transform:translateY(100vh); opacity:0;}
+    20%{opacity:1;}
+    100%{transform:translateY(-10vh); opacity:0;}
+}
+
+.card{
+    background: rgba(255,255,255,0.92);
+    width:90%;
+    max-width:600px;
+    border-radius:20px;
+    padding:20px;
+    text-align:center;
+    box-shadow:0 20px 40px rgba(0,0,0,0.3);
+}
+
+.card img{
+    width:100%;
+    border-radius:15px;
+}
+
+.text{
+    font-size:20px;
+    color:#d6336c;
+    margin:20px 0;
+}
+
+button{
+    background:#ff6f91;
+    border:none;
+    color:white;
+    padding:12px 25px;
+    border-radius:30px;
+    font-size:16px;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#ff3e6c;
+}
+</style>
+</head>
+
+<body>
+
+<div class="bg"></div>
+
+<!-- floating hearts -->
+<span class="heart" style="left:10%;animation-delay:0s">❤️</span>
+<span class="heart" style="left:25%;animation-delay:2s">💖</span>
+<span class="heart" style="left:40%;animation-delay:4s">💕</span>
+<span class="heart" style="left:55%;animation-delay:1s">🌸</span>
+<span class="heart" style="left:70%;animation-delay:3s">❤️</span>
+<span class="heart" style="left:85%;animation-delay:5s">💞</span>
+
+<div class="card">
+    <img id="photo" src="photo1.jpg">
+    <div class="text" id="line">
+      Jab tum Smile karti ho, Me bata nahi sakta mujhe andar tak kitni khushi milti hai🥹
+    </div>
+    <button onclick="nextPage()">Next ➡️</button>
+</div>
+
+<script>
+let page = 1;
+
+const photos = [
+"photo1.jpg","photo2.jpg","photo3.jpg","photo4.jpg","photo5.jpg",
+"photo6.jpg","photo7.jpg","photo8.jpg","photo9.jpg","photo10.jpg"
+];
+
+const lines = [
+"❤️ Jab tum Smile karti ho, Me bata nahi sakta mujhe andar tak kitni khushi milti hai🥹",
+"💕 Galtiyan ho jati hai, par mera pyaar kabhi kam nahi hua 😘",
+"💖 Tumhare door jane ke ahsas Meri Raato ki need udd gyi🥺",
+"🌸 Tumhari har khushi deni ke liye me roj mehnat karta hu lekin kabhi bhi sahi se bata nahi pata tum kitna jruri ho😔",
+"💞 Main perfect nahi hoon, par tumse beinteha pyaar karta hoon 🥺",
+"🥺 tum mere liye 2 saal se bahut kuch kar rahi ho, meri ye galti hai ki me tumhere effort ko bar bar ignore karke tumhari disrespect karta hu 💕",
+"💝 Tum meri aadat nahi, meri zarurat ho, Dil Se Sorry aur I Love You❤️",
+"🌹 Tumhare bina khush rehna mere liye sirf acting hai, me bahut bar fail ho gya😔",
+"💗 Mera future sirf tumhare sath hi acha rahega aur 60 ki umar me hum fir se photos click karenge✨",
+"👑 Mujhse kabhi door mat jana, I really need you ❤️‍🩹"
+];
+
+function nextPage(){
+    page++;
+    if(page > photos.length){
+        alert("❤️ I Love You ❤️");
+        return;
+    }
+    document.getElementById("photo").src = photos[page-1];
+    document.getElementById("line").innerText = lines[page-1];
+}
+</script>
+
+</body>
+</html>
